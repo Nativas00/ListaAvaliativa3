@@ -34,7 +34,7 @@ int RomanoBase10(char *roma){
 }
 
 void Base10Binario(int base10, char *roma){
-    int binario[32];
+    int binario[64];
     int i = 0;
 
     while (base10 > 0){
@@ -43,7 +43,7 @@ void Base10Binario(int base10, char *roma){
         i++;
     }
 
-    printf("%s na base 2 = ", roma);
+    printf("%s na base 2: ", roma);
     for (int j = i - 1; j >= 0; j--){
         printf("%d", binario[j]);
     }
@@ -51,7 +51,7 @@ void Base10Binario(int base10, char *roma){
 }
 
 void Base10Hexa(int base10, char *roma){
-  char hexa[16];
+  char hexa[32];
   int i = 0;
 
   while (base10 > 0){
@@ -66,7 +66,7 @@ void Base10Hexa(int base10, char *roma){
       i++;
     }
 
-  printf("%s na base 16 = ", roma);
+  printf("%s na base 16: ", roma);
   for (int j = i - 1; j >= 0; j--){
     printf("%c", hexa[j]);
   }
@@ -74,14 +74,14 @@ void Base10Hexa(int base10, char *roma){
 }
 
 int main(){
-    char romano[5];
+    char romano[20];
 
     scanf("%s", romano);
 
     int base10 = RomanoBase10(romano);
     
     Base10Binario(base10, romano);
-    printf("%s na base 10 = %d\n", romano, base10);
+    printf("%s na base 10: %d\n", romano, base10);
     Base10Hexa(base10, romano);
 
     return 0;
